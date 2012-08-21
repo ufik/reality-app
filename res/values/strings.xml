@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Reality-ASD</string>
+    <string name="btn_add">Přidat</string>
+	<string name="btn_sync">Synchronizovat</string>
+	<string name="take_picture">Fotoaparát</string>
+	<string name="btn_take_picture">Vyfotit</string>
+	<string name="add_reality">Uložit</string>
+    <string name="btn_back">Zpět</string>
+    <string name="no_internet">Není aktivní připojení k síti.</string>
+    <string name="settings_camera">Nastavení kamery</string>
+    <string name="camera_size">Rozlišení</string>
+    <string name="camera_size_summary">Nastavení rozlišení obrázku</string>
+    <string name="settings_login">Nastavení uživatele</string>
+	<string name="logout">Odhlásit</string>
+	<string name="logout_summary">Odhlásí uživatele</string>
+	<string name="password">Heslo</string>
+	<string name="password_summary">Heslo nutné k přihlášení</string>
+	<string name="login">Přihlásit</string>
+	<string name="login_summary">Provede přihlášení.</string>
+    <string name="menu_settings">Nastavení</string>
+    <string name="menu_exit">Konec</string>
+    <string name="login_info">Přihlášení uživatele:</string>
+    <string name="login_username">Uživatelské jméno:</string>
+    <string name="login_password">Heslo:</string>
+    <string name="login_button">Přihlásit</string>
+	
+</resources>

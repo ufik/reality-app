@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen android:id="@+id/pref" xmlns:android="http://schemas.android.com/apk/res/android" >
+    <PreferenceCategory android:title="@string/settings_camera">
+        <ListPreference android:id="@+id/camera_size" android:title="@string/camera_size" android:key="camera_size" android:summary="@string/camera_size_summary"/>
+    </PreferenceCategory><PreferenceCategory android:title="@string/settings_login">
+        <Preference android:summary="@string/logout_summary" android:key="logout" android:title="@string/logout"/>
+    </PreferenceCategory>
+    
+    
+    
+
+</PreferenceScreen>
