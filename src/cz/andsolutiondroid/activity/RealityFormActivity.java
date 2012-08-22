@@ -198,8 +198,6 @@ public class RealityFormActivity extends Activity  {
         
         this.updateCursor();
         iAdapter.notifyDataSetChanged();
-        
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     } 
 	
 	/**

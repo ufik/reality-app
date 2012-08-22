@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="horizontal" >
+
+    <FrameLayout
+        android:id="@+id/camera_preview"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="1" >
+
+        
+
+    </FrameLayout>
+
+    <Button
+        android:id="@+id/button_capture"
+        style="@style/CustomButtonConfirm"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/btn_take_picture" />
+    	
+    <Button
+        android:id="@+id/btn_back"
+        style="@style/CustomButtonDecline"
+        android:layout_width="100dp"
+        android:text="@string/btn_back" />
+    
+</RelativeLayout>

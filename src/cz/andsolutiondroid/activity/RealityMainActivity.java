@@ -162,8 +162,6 @@ public class RealityMainActivity extends Activity {
         
         aa = new RealityAdapter(RealityMainActivity.this, realities);
 		lv.setAdapter(aa);
-        
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
     }
     
     public boolean onCreateOptionsMenu(Menu menu) {
