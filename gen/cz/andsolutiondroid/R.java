@@ -26,7 +26,7 @@ public final class R {
         public static final int add_reality=0x7f08000c;
         public static final int btn_add=0x7f08000d;
         public static final int btn_back=0x7f080001;
-        public static final int btn_sync=0x7f08000f;
+        public static final int btn_sync=0x7f08000e;
         public static final int button_capture=0x7f080002;
         public static final int camera_preview=0x7f080000;
         public static final int camera_size=0x7f080018;
@@ -36,7 +36,7 @@ public final class R {
         public static final int gallery1=0x7f08000b;
         public static final int item_synchronize=0x7f080016;
         public static final int item_title=0x7f080015;
-        public static final int list=0x7f08000e;
+        public static final int list=0x7f08000f;
         public static final int login_button=0x7f080014;
         public static final int menu=0x7f080019;
         public static final int pref=0x7f080017;
