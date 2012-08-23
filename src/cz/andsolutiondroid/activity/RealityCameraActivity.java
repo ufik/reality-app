@@ -9,9 +9,12 @@ import java.util.Date;
 import cz.andsolutiondroid.R;
 import cz.andsolutiondroid.R.id;
 import cz.andsolutiondroid.utilities.CameraPreview;
-import cz.andsolutiondroid.utilities.SingleMediaScanner;
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Matrix;
 import android.hardware.Camera;
 import android.hardware.Camera.PictureCallback;
 import android.media.MediaScannerConnection;
@@ -19,7 +22,10 @@ import android.os.Bundle;
 import android.os.Environment;
 import android.preference.PreferenceManager;
 import android.util.Log;
+import android.view.Display;
+import android.view.Surface;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.Toast;
@@ -88,7 +94,6 @@ public class RealityCameraActivity extends Activity {
     
     protected void onResume(){
     	super.onResume();
-    	
 
     	getCameraInstance();
     }
@@ -111,15 +116,36 @@ public class RealityCameraActivity extends Activity {
 
 	        try {
 	        	
-	        	Toast.makeText(RealityCameraActivity.this, "Obrazek ulozen.", Toast.LENGTH_LONG).show();
+	        	Display display = ((WindowManager) RealityCameraActivity.this.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
+	        	int rotation = display.getRotation();
+	                        
+	            int degrees = 0;
+	            switch (rotation) {
+	                case Surface.ROTATION_0: degrees = 0; break;
+	                case Surface.ROTATION_90: degrees = 90; break;
+	                case Surface.ROTATION_180: degrees = 180; break;
+	                case Surface.ROTATION_270: degrees = 270; break;
+	            }
+	            
+	            if(degrees == 0 || degrees == 180)
+	            	rotation = 90;
+	            else
+	            	rotation = 0;
+	        	
+	        	Matrix mat = new Matrix();
+	        	mat.postRotate(rotation);
+	        	Bitmap bMap = BitmapFactory.decodeByteArray(data, 0, data.length);
+	        	Bitmap bMapRotate = Bitmap.createBitmap(bMap, 0, 0, bMap.getWidth(), bMap.getHeight(), mat, true);
 	        	
 	            FileOutputStream fos = new FileOutputStream(pictureFile);
-	            fos.write(data);
-	            fos.close();
+	            
+	            bMapRotate.compress(Bitmap.CompressFormat.JPEG, 90, fos);
 	            
 	            MediaScannerConnection.scanFile(RealityCameraActivity.this, new String[] {pictureFile.toString()}, null, null);
 	            
 	            mCamera.startPreview();
+	            
+	            Toast.makeText(RealityCameraActivity.this, "Obrazek ulozen.", Toast.LENGTH_LONG).show();
 	            
 	        } catch (FileNotFoundException e) {
 	            Log.d(TAG, "File not found: " + e.getMessage());

@@ -4,7 +4,6 @@ import java.io.File;
 import cz.andsolutiondroid.R;
 import cz.andsolutiondroid.model.Reality;
 import cz.andsolutiondroid.model.RealityDataSource;
-import cz.andsolutiondroid.utilities.SingleMediaScanner;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
